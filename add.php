@@ -10,12 +10,8 @@ $nn ="";
 
 if($_FILES['myFile']['name'] != ""){
 
-//echo "GOT IT \n";
-//echo $_FILES;
-
 $nn = upload_file();
 
-///echo $nn. "\n";
 }
 
 
@@ -191,18 +187,6 @@ table, th, td {
         </div>
         <!--/ #intro -->
 
-
-
-
-        <!--FOOTER DESCRIPTION -->
-        <div id="footwrap">
-                <div class="container">
-                        <div class="row"></div>
-                        <!--/.row -->
-                </div>
-                <!--/.container -->
-        </div>
-        <!--/ #footer -->
 
 
 
