@@ -22,14 +22,12 @@ removePicture($_POST['old_picture']);
 $new_file_name = upload_File();
 editItem($_POST['old_id'], $new_file_name, $conn);
 
-//echo "kkkkk \n";
 header("location: index.html");
 
 }else if(isset($_POST['new_name'])){
 
 editItem($_POST['old_id'], $_POST['old_picture'], $conn);
 
-//echo "ok~~";
 header("location: index.html");
 }
 
@@ -211,18 +209,6 @@ table, th, td {
         </div>
         <!--/ #intro -->
 
-
-
-
-        <!--FOOTER DESCRIPTION -->
-        <div id="footwrap">
-                <div class="container">
-                        <div class="row"></div>
-                        <!--/.row -->
-                </div>
-                <!--/.container -->
-        </div>
-        <!--/ #footer -->
 
 
 
