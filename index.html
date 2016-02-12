@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="assets/ico/favicon.png">
+
+<title>Inventory</title>
+
+<!-- Bootstrap core CSS -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="assets/css/main.css" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+<link
+	href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700'
+	rel='stylesheet' type='text/css'>
+
+<script src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/smoothscroll.js"></script>
+<script src="assets/js/Chart.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+table, th , td  {
+    border-collapse: collapse;
+    padding: 8px;
+}
+
+
+
+</style>
+
+
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#nav" style="background-color: #2f2f2f">
+
+	<div id="section-topbar">
+		<div id="topbar-inner" >
+			<div class="container">
+				<div class="row">
+					<div class="dropdown">
+						<ul id="nav" class="nav">
+							<li class="menu-item"><a class="smoothScroll" href="add.php"
+								title="Add"><i class="icon-user"></i></a></li>
+						</ul>
+						<!--/ uL#nav -->
+					</div>
+					<!-- /.dropdown -->
+
+					<div class="clear"></div>
+				</div>
+				<!--/.row -->
+			</div>
+			<!--/.container -->
+
+			<div class="clear"></div>
+		</div>
+		<!--/ #topbar-inner -->
+	</div>
+	<!--/ #section-topbar -->
+
+
+	<div id="intro" style="background-color: #2f2f2f">
+	<br><br><br><br>
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-2 col-lg-offset-1">
+					<h5></h5>
+				</div>
+				<div class="col-lg-6">
+				<div style="color:white;font-weight: bold; font-size:26px" class="col-lg-offset-4">Home Inventory</div>
+				<br><br><br><br>
+					<!--  ~~~~~START~~~~ -->
+
+
+					<div id="id01"></div>
+
+					<script>
+						var xmlhttp = new XMLHttpRequest();
+						var url = "items_list.php";
+
+						xmlhttp.onreadystatechange = function() {
+							if (xmlhttp.readyState == 4
+									&& xmlhttp.status == 200) {
+								myFunction(xmlhttp.responseText);
+							}
+						}
+						xmlhttp.open("GET", url, true);
+						xmlhttp.send();
+
+						function myFunction(response) {
+							var arr = JSON.parse(response);
+							var i;
+							var out = "<table>";
+							out += "<tr><th>ID</th><th> Name</th><th> Catagory </th><th> Quantity </th><th> picture </th><th> location </th><th> comments </th><th>edit</th><th>delete</th></tr>";
+							for (i = 0; i < arr.length; i++) {
+
+								out += "<tr><td>"
+										+ arr[i].Id
+										+ "</td><td>"
+										+ arr[i].Name
+										+ "</td><td>"
+										+ arr[i].Catagory
+										+ "</td><td>"
+										+ arr[i].Quantity
+										+ "</td><td>"
+										+ "<a href =\"uploads/"+arr[i].Picture+"\"><img src=\"uploads/thumbs/"+arr[i].Picture+"\"></img></a>"
+										+ "</td><td>"
+										+ arr[i].Location
+										+ "</td><td>"
+										+ arr[i].Comments
+										+ "</td><td>"
+										+ "<a href=\"edit.php?Id="
+										+ arr[i].Id
+										+ "&Name="
+										+ arr[i].Name
+										+ "&Catagory="
+										+ arr[i].Catagory
+										+ "&Quantity="
+										+ arr[i].Quantity
+										+ "&Location="
+										+ arr[i].Location
+										+ "&Comments="
+										+ arr[i].Comments
+										+ "&Picture="
+										+ arr[i].Picture
+										+ "\" onclick=\"return confirm('sure to edit !'); \" >edit</a>"
+										+ "</td><td>"
+										+ "<a href=\"delete.php?delete_id="
+										+ arr[i].Id
+										+ "\"onclick=\"return confirm('sure to delete !'); \" > <font style='color: red'>X</font> </a>"
+										+ "</td></tr>";
+							}
+							out += "</table>";
+							document.getElementById("id01").innerHTML = out;
+						}
+					</script>
+
+
+
+					<!--   ~~~~~END~~~~ -->
+
+				</div>
+				<div class="col-lg-3">
+					<!--  <p><a href="https://docs.google.com/document/d/1IzKEfL6hxgQyRlsib6nYI-yXSuu_PCMWLEHWFbqwhG0/pub"><i class="icon-file"></i></a> <sm>Resume</sm></p> -->
+				</div>
+
+			</div>
+			<!--/.row -->
+		</div>
+		<!--/.container -->
+	</div>
+	<!--/ #intro -->
+
+
+
+
+	<!--FOOTER DESCRIPTION -->
+	<div id="footwrap">
+		<div class="container">
+			<div class="row">
+
+				
+			</div>
+			<!--/.row -->
+		</div>
+		<!--/.container -->
+	</div>
+	<!--/ #footer -->
+
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/bootstrap.js"></script>
+</body>
+</html>
+
+
