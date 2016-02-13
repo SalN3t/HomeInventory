@@ -1,7 +1,7 @@
 # HomeInventory
 Home Inventory system to keep track of your house hold items, their location, and their catagory with an optional picture and comments.
 
-#Requirment
+#Requirement
 
 - Apache webserver
 - PHP5
@@ -9,7 +9,7 @@ Home Inventory system to keep track of your house hold items, their location, an
 
 #Configure
 
-Install Apache with the other depantent files
+Install Apache with the other dependent files
 
 <code>
 sudo apt-get install apache2
@@ -22,7 +22,7 @@ sudo /etc/init.d/apache2 restart
 
 </code>
 
-Isntall MySQL server 
+Install MySQL server 
 
 
 <code>
@@ -59,14 +59,14 @@ CREATE TABLE `inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 </code>
 
-Next append the repasotory to /var/www directory
+Next append the repository to /var/www directory
 and create two folders
 <code>
 sudo mkdir uploads
 sudo mkdir uploads/thumbs
 </code>
 
-Then change the folder premission to 
+Then change the folder permissions to 
 <code>
 sudo chmod 777 uploads
 sudo chmod 777 uploads/thumbs
