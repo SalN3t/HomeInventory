@@ -52,7 +52,7 @@ Then use the database and add the table to it
 US dbname;
 </code>
 <br>
-
+<database>
 DROP TABLE IF EXISTS `inventory`;
 CREATE TABLE `inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -64,7 +64,7 @@ CREATE TABLE `inventory` (
   `comments` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+</database>
 
 Next append the repository to /var/www directory
 and create two folders
@@ -84,6 +84,9 @@ sudo chmod 777 uploads
 <code>
 sudo chmod 777 uploads/thumbs
 </code>
+
+Then go to assets/includes/csl-config.php
+and update the database name, user, password, table 
 
 After that go to localhost on the browser and it should be setup!
 
