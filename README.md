@@ -89,7 +89,7 @@ sudo chmod 777 uploads
 sudo chmod 777 uploads/thumbs
 </code>
 
-Then go to assets/includes/csl-config.php
+Then go to assets/includes/csl_config.php
 and update the database name, user, password, table 
 
 After that go to localhost on the browser and it should be setup!
