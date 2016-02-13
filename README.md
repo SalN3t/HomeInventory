@@ -70,6 +70,7 @@ CREATE TABLE `inventory` (
 
 Next append the repository to /var/www directory
 and create two folders
+<br>
 <code>
 sudo mkdir uploads
 </code>
@@ -79,6 +80,7 @@ sudo mkdir uploads/thumbs
 </code>
 
 Then change the folder permissions to 
+<br>
 <code>
 sudo chmod 777 uploads
 </code>
