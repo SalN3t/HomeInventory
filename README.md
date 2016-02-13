@@ -48,11 +48,12 @@ CREATE DATABASE dbname;
 </code>
 
 Then use the database and add the table to it
-<code>
-US dbname;
-</code>
 <br>
-<database>
+<code>
+USE dbname;
+</code>
+<br><br>
+
 DROP TABLE IF EXISTS `inventory`;
 CREATE TABLE `inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -64,7 +65,8 @@ CREATE TABLE `inventory` (
   `comments` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-</database>
+
+<br><br>
 
 Next append the repository to /var/www directory
 and create two folders
