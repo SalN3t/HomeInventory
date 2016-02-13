@@ -13,14 +13,20 @@ Install Apache with the other dependent files
 
 <code>
 sudo apt-get install apache2
-
-sudo apt-get install php5
-
-sudo apt-get install libapache2-mod-php5
-
-sudo /etc/init.d/apache2 restart
-
 </code>
+<br>
+<code>
+sudo apt-get install php5
+</code>
+<br>
+<code>
+sudo apt-get install libapache2-mod-php5
+</code>
+<br>
+<code>
+sudo /etc/init.d/apache2 restart
+</code>
+
 
 Install MySQL server 
 
@@ -45,7 +51,8 @@ Then use the database and add the table to it
 <code>
 US dbname;
 </code>
-<code>
+<br>
+
 DROP TABLE IF EXISTS `inventory`;
 CREATE TABLE `inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -57,18 +64,24 @@ CREATE TABLE `inventory` (
   `comments` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-</code>
+
 
 Next append the repository to /var/www directory
 and create two folders
 <code>
 sudo mkdir uploads
+</code>
+<br>
+<code>
 sudo mkdir uploads/thumbs
 </code>
 
 Then change the folder permissions to 
 <code>
 sudo chmod 777 uploads
+</code>
+<br>
+<code>
 sudo chmod 777 uploads/thumbs
 </code>
 
